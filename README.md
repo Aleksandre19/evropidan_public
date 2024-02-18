@@ -4,6 +4,18 @@ A simple landing webpage project on Django for a postal company. The idea is tha
 
 [Deployed Webpage](https://www.evropidan.ge)
 
+
+### <span id="list-of-file">List of Files</span>
+Due to the project's private business nature, I'm sharing selected code snippets to demonstrate my coding skills.
+
+-   [Home page views.py](#home-views)
+-   [HTML Structuring](#html-example)
+-   [Menu](#menu)
+    -   [Underline on hover](#underline-on-hover)
+    -   [Mobile menu](#mobile-menu)
+-   [How To Use Cards](#how-to-use-cards)
+
+
 #### Technologies:
 - Django 4.2.7
 - Django Allauth
@@ -31,19 +43,10 @@ The project is deployed on an Ubuntu server on [Linode](https://www.linode.com).
 - Setting up the virtual environment.
 - Installing and configuring Apache2.
 - Setting up permissions.
-- Enabling HTTPS using Let's Encrypt. 
-
-### <span id="list-of-file">List of Files</span>
-Due to the project's private business nature, I'm sharing selected code snippets to demonstrate my coding skills.
-
--   [Home page views.py](#home-views)
--   [HTML Structuring](#html-example)
--   [Menu](#menu)
-    -   [Underline on hover](#underline-on-hover)
-    -   [Mobile menu](#mobile-menu)
+- Enabling HTTPS using Let's Encryp
 
 ### <span id="home-views"> Home page views.py</span>
-<a href="#list-of-file" style="font-size: 4px;"> Menu ^ </a>
+*<a href="#list-of-file"> Back to files list ^ </a>*
 
 ```python
 # Django imports.
@@ -105,7 +108,7 @@ class HomeView(View):
 ### <span id="html-example"> HTML Structuring </span>
 
 To improve the code's readability and structure, I created a custom template tag to replace the standard each HTML element.
-<small> <a href="#list-of-file"> Menu ^ </a> </small>
+*<a href="#list-of-file"> Back to files lists ^ </a>*
 
 ###### HTML Example:
 ```python
@@ -160,7 +163,7 @@ def enda():
 
 #### <span id="underline-on-hover">Underline on hover</span>
 This is the code for the hover underline effect on the desktop top menu.
-<small> <a href="#list-of-file"> Menu ^ </a> </small>
+*<a href="#list-of-file"> Back to files list ^ </a>*
 
 ###### Underline HTML:
 ```python
@@ -205,15 +208,15 @@ This is the code for the hover underline effect on the desktop top menu.
 
 ### Mobile menu.
 Below are the code snippets divided into sections for the mobile menu.
-<small><a href="#list-of-file"> Menu ^ </a> </small>
+*<a href="#list-of-file"> Back to files list ^ </a>*
 
-##### <span id="mobile-menu-sections"> Mobile Menu Sections: </span>
+##### <span id="mobile-menu-sections"> Mobile Menu Section Links: </span>
 -   [Mobile Menu HTML](#mobile-menu-html)
 -   [Mobile Menu CSS](#mobile-menu-css)
 -   [Mobile Menu JavaScript](#mobile-menu-js)
 
 ###### <span id="mobile-menu-html"> Mobile Menu HTML: </span>
-<small><a href="#mobile-menu-sections"> Mobile  Menu Sections ^ </a></small>
+*<a href="#mobile-menu-sections"> Back to links ^ </a>*
 
 ```python
 <!-- Menu on mobile & tablet devices. -->
@@ -251,7 +254,7 @@ Below are the code snippets divided into sections for the mobile menu.
 ```
 
 ###### <span id="mobile-menu-css"> Mobile Menu CSS: </span>
-<small><a href="#mobile-menu-sections"> Mobile  Menu Sections ^ </a></small>
+*<a href="#mobile-menu-sections"> Back to links ^ </a>*
 
 ```css
 /* =============== Mobile menu =========== */
@@ -410,7 +413,7 @@ Below are the code snippets divided into sections for the mobile menu.
 ```
 ###### <span id="mobile-menu-js"> JavaScript: </span>
 These code snippets are located within the TopMenu JavaScript class, in the onclick event function of the menu links, and it causes the menu to disappear halfway when the link is clicked.
-<small><a href="#mobile-menu-sections"> Mobile  Menu Sections ^ </a></small>
+*<a href="#mobile-menu-sections"> Back to links ^ </a>*
 
 ```javascript
 // Calculate offset fot scrolling.
@@ -444,6 +447,218 @@ closeMobileMenu(offsetPosition, mobileOffset, offset) {
             const checkElm = document.querySelector('.mobile-toggler');
             checkElm.checked = false;                           
     }
+}
+```
+
+### <span id="how-to-use-cards"> How To Use Cards </span>
+This code implements the sliding card effect in the 'How To Use' section. The cards slide in from the left as the user scrolls down.
+*<a href="#list-of-file"> Back to files list ^ </a>*
+
+##### <span id="how-to-use-cards-section"> How To Use Cards Section Links: </span>
+-   [How To Use Cards HTML](#how-to-use-html)
+-   [How To Use Cards CSS](#how-to-use-css)
+
+###### <span id="how-to-use-html"> How To Use Cards HTML: </span>
+*<a href="#how-to-use-cards-section"> Back to links ^ </a>*
+
+```python
+<!-- List of steps. -->
+{% ul 'how-to-use-list' %}
+    <!-- Step 1. -->
+    {% li %}
+        {% div 'single-task' %}
+            {% h3 'task-title' %}
+                გაიარეთ რეგისტრაცია
+            {% endh3 %}
+            {% p 'task-desc' %}
+                დარეგისტრირდით ჩვენ ვებ-გვერდზე სულ რამდენიმე ველის შევსებით.
+            {% endp %}
+        {% enddiv %}
+    {% endli %}
+
+    <!-- Step 2. -->
+    {% li %}
+        {% div 'single-task' %}
+            {% h3 'task-title' %}
+                დაადასტურეთ ელ.ფოსტა
+            {% endh3 %}
+            {% p 'task-desc' %}
+                რეგისტრაციის შემდეგ მითითებულ ელ.ფოსტაზე მიიღებთ ინსტრუქციას
+                ელ.ფოსტის დადასტურების შესახებ.
+            {% endp %}
+        {% enddiv %}
+    {% endli %}
+    
+    <!-- Step 3. -->
+    {% li %}
+        {% div 'single-task' %}
+            {% h3 'task-title' %}
+                მიიღეთ მისამართი
+            {% endh3 %}
+            {% p 'task-desc' %}
+                ელ.ფოსტის დადასტურების შემდეგ მეილზე მიიღებთ მისამართს.
+            {% endp %}
+        {% enddiv %}
+    {% endli %}
+    
+    <!-- Step 4. -->
+    {% li %}
+        {% div 'single-task' %}
+            {% h3 'task-title' %}
+                მიუთითეთ მისამართი
+            {% endh3 %}
+            {% p 'task-desc' %}
+                თქვენთვის სასურველ ონლაინ მაღაზიაში შეიძინეთ სასურველი ნივთი
+                და მიმღების გრაფაში მიუთითეთ ელ.ფოსტაზე მიღებული მისამართი.
+            {% endp %}
+        {% enddiv %}
+    {% endli %}
+    
+    <!-- Step 5. -->
+    {% li %}
+        {% div 'single-task' %}
+            {% h3 'task-title' %}
+                დაარეგისტრირეთ გზავნილი
+            {% endh3 %}
+            {% p 'task-desc' %}
+                შეძენის შემდეგ მობრძანდით ჩვენ ვებ-გვერდზე, გაიარეთ ავტორიზაცია
+                და დაარეგისტრირეთ გზავნილი.
+            {% endp %}
+        {% enddiv %}
+    {% endli %}
+    
+    <!-- Step 6. -->
+    {% li %}
+        {% div 'single-task' %}
+            {% h3 'task-title' %}
+                ადევნეთ თვალი გზავნილს
+            {% endh3 %}
+            {% p 'task-desc' %}
+                გზავნილის დარეგისტრირების შემდეგ საშუალება გექნებათ თვალი
+                ადევნოთ გზავნილის სტატუსს.
+            {% endp %}
+        {% enddiv %}
+    {% endli %}
+{% endul %}
+```
+
+###### <span id="how-to-use-css"> How To Use Cards CSS: </span>
+*<a href="#how-to-use-cards-section"> Back to links ^ </a>*
+
+
+```css
+.how-to-use .how-to-use-list {
+    padding: 64px 0;
+}
+
+.how-to-use .how-to-use-list li {
+    list-style: none;
+    position: relative;
+    width: 2px;
+    margin: 0;
+    padding: 22px 0;
+    background-color: var(--main-dark);
+}
+
+.how-to-use .how-to-use-list li:nth-child(even) .single-task {
+    left: 64px;
+}
+
+
+.how-to-use .how-to-use-list li:nth-child(odd) .single-task {
+    left: 128px;
+}
+
+.how-to-use .how-to-use-list li::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 22px;
+    width: 45px;
+    height: 45px;
+    background-color: var(--main-color-hover);
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 32px 32px;
+    transition: background 0.5s ease-in-out;
+}
+
+/* Registration icon. */
+.how-to-use .how-to-use-list li:nth-child(1)::after {
+    background-image: url('../../images/icons/user-transparant.png');
+
+}
+
+/* Email confirmation icon. */
+.how-to-use .how-to-use-list li:nth-child(2)::after {
+    background-image: url('../../images/icons/at-transparant.png');
+}
+
+/* Address icon. */
+.how-to-use .how-to-use-list li:nth-child(3)::after {
+    background-image: url('../../images/icons/street-transparant.png');
+}
+
+/* Shopping icon. */
+.how-to-use .how-to-use-list li:nth-child(4)::after {
+    background-image: url('../../images/icons/shopping-transparant.png');
+}
+
+/* Add parcel icon. */
+.how-to-use .how-to-use-list li:nth-child(5)::after {
+    background-image: url('../../images/icons/edit-transparant.png');
+}
+
+/* Checking parcel icon. */
+.how-to-use .how-to-use-list li:nth-child(6)::after {
+    background-image: url('../../images/icons/heart-eyes-transparant.png');
+}
+
+.price-section .how-to-use-list .single-task,
+.how-to-use .how-to-use-list .single-task {
+    position: relative;
+    width: 700px;
+    border-left: 3px solid var(--main-dark);
+    border-radius: 8px;
+    padding: 8px 24px;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
+    transform: translateX(200px);
+    visibility: hidden;
+    opacity: 0;
+    filter: blur(10px);
+    transition: all 0.5s ease-in-out;
+}
+
+.how-to-use .how-to-use-list .single-task::before {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    left: -25px;
+    border-width: 12px 24px 12px 0;
+    border-color: transparent var(--main-dark) transparent transparent;
+}
+
+.price-section .single-task .task-title,
+.how-to-use .single-task .task-title {
+    color: var(--pitch-dark);
+    font-size: 32px;
+}
+
+
+.price-section .single-task .task-desc,
+.how-to-use .single-task .task-desc {
+    font-size: 22px;
+}
+
+/* Change bullets color. */
+section.how-to-use ul.how-to-use-list li.show-single-card::after {
+    background-color: var(--main-dark);
 }
 ```
 
