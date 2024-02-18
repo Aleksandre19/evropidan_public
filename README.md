@@ -43,7 +43,7 @@ Due to the project's private business nature, I'm sharing selected code snippets
     -   [Mobile menu](#mobile-menu)
 
 ### <span id="home-views"> Home page views.py</span>
-<small> <a href="#list-of-file"> Menu ^ </a> </small>
+<a href="#list-of-file" style="font-size: 4px;"> Menu ^ </a>
 
 ```python
 # Django imports.
